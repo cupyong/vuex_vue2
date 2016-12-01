@@ -8,8 +8,8 @@
 	</div>
 </template>
 <script>
-import NavTitle from './nav.vue' 
-import NewList from './NewList.vue' 
+import NavTitle from '../components/Home/nav.vue'
+import NewList from '../components/Home/NewList.vue' 
 
 export default {
 	 components: { NavTitle,NewList},

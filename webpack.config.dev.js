@@ -6,7 +6,7 @@ module.exports = {
   devtool: 'eval-source-map',
   debug: true,
   entry: [
-    './src/index'
+    './src/main'
   ],
   output: {
     path: path.join(__dirname, 'dist'),

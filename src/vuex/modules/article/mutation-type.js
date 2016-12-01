@@ -1,0 +1,1 @@
+export const FETCH_NAV_SUCESS = 'FETCH_NAV_SUCESS'

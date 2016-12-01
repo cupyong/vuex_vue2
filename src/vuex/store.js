@@ -1,17 +1,17 @@
+/**
+ * Created by zhengguorong on 16/6/22.
+ */
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import middlewares from './middlewares'
-import showmsg from './modules/showmsg'
+import article from './modules/article'
+
+Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
-Vue.use(Vuex)
-Vue.config.debug = debug
-Vue.config.warnExpressionErrors = false
 
 export default new Vuex.Store({
   modules: {
-    showmsg
+    article
   },
-  strict: debug,
-
+  strict: debug
 })
