@@ -10,7 +10,7 @@ import nodemon from 'gulp-nodemon'
 import open from 'open'
 
 const DEV_PORT = 5000,PROD_PORT = 8400
-gulp.task('serve', cb =>{
+gulp.task('serve',['copy1'], cb =>{
   let webpackConfig = require('./webpack.config')
   let myConfig = Object.create(webpackConfig)
   myConfig.entry.unshift('webpack/hot/only-dev-server')
@@ -67,5 +67,14 @@ gulp.task('nodemon', ()=> {
     env: { 'NODE_ENV': 'production','PORT':PROD_PORT }
   })
 })
+
+gulp.task('copy1',  function() {
+  return gulp.src('src/assets/img/*')
+    .pipe(gulp.dest('img'))
+   
+});
+
+
+
 
 gulp.task('serve:dist',gulpSequence('build','nodemon'))

@@ -6,8 +6,17 @@ const router = new VueRouter({
     {
       path: '/',
       component: require('./views/index')
+    },
+    {
+      path: '/list',
+      name:'111',
+      component:  require('./views/list')
+    },
+    {
+      path: '/detail/:id',
+      name:'222',
+      component:  require('./components/Article/detail.vue')
     }
-    
   ]
 })
 export default router

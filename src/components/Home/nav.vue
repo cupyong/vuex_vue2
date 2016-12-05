@@ -3,12 +3,7 @@
     <div class="pd-10">
      	<a v-for="nav in navlist" class="mg-l-0">{{nav.name}}</a>
     </div>
-		<!--<ul class="pd-10">
-			<li>
-				<a v-for="nav in navlist" class="mg-l-0">{{nav.name}}</a>
-		 </li>
-		</ul>-->
-	</div>
+  </div>
 </template>
 <script>
  import {mapGetters} from 'vuex'
