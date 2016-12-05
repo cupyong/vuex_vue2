@@ -1,9 +1,12 @@
 import vue from 'vue'
 
-export const commonHttpAction = (data, commit) => {
+export const commonHttpAction = (commit ,data) => {
   let _url = `http://localhost:9009/api${data.url}`
   if(!data.method){
     data.method = 'get'
+  }
+  if(data.loading){
+    commit('START_LOADING')
   }
   if(data.query){
     var searchParams=''
@@ -27,6 +30,9 @@ export const commonHttpAction = (data, commit) => {
        }
        return Promise.reject(new Error(res.status))
      }).then((json) => {
+       if(data.loading){
+         commit('FINISH_LOADING')
+       }
        if (json.code === 0) {
          return commit(data.sucessCode, json.data)
        }
@@ -45,6 +51,9 @@ export const commonHttpAction = (data, commit) => {
         }
         return Promise.reject(new Error(res.status))
       }).then((json) => {
+        if(data.loading){
+          commit('FINISH_LOADING')
+        }
         if (json.code === 0) {
           return commit(data.sucessCode, json.data)
         }
